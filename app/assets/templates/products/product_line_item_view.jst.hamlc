@@ -1,0 +1,23 @@
+%div{:class => "v-row-txt-img #{@product.get("state")}"}  
+  .price-tag.hide-it
+  .img-hover-txt
+    .img-btns
+      %a{:href => "javascript:;", :title => "Comment"}
+        %img.comment_button{:alt => "", :src => "/assets/comment-img.png"}/        
+      %a{:href => "javascript:;", :title => "Wish List"}
+        %img.wishlist_button{:alt => "", :src => "/assets/wishlist-icon.png"}/
+      .like-button
+      %a.product-small-edit.mouse-pointer.without-decoration{:href => Routes.edit_product_path(@product.id), :title => "Edit", :target=>"_blank"}
+        %span{:class => "text"}Edit                
+    %a{:href => Routes.product_path(@product)}
+      .img-txt
+        /%img{:alt => "", :src => "/assets/star-icon.png"}/
+        %span.product_name          
+        %br/
+        %span.product_category
+  %a{:href => Routes.product_path(@product)}      
+    %img{:src => @product.image("big"), :style => "width: 100%"}
+.v-row-profile  
+  
+.comments_area
+.new-comment

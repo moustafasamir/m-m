@@ -1,0 +1,20 @@
+.add-wish.fl
+  .add_wish.fl.style-font-16 Choose a wishlist name
+  .wish-list-field.fl
+    .create-field.fl
+      %select#list_name
+        - for p in @productList.models
+          %option= p.get('name')
+      %span.missing_error.help-inline You must provide your wishlist name.
+      %span.name_error.help-inline Error
+    .wishlist-button.wishlist-add.fl
+      %a{:href => "Javascript:;"}
+        %img{:alt => "wishlist", :border => "0", :height => "28", :src => "/assets/add-to-wish-list-small.png", :width => "88"}/
+  .add_wish.fl.style-font-16 Or Create a wishlist
+  .wish-list-field.fl
+    .create-field.fl
+      %form
+        %input{:style => "height:29px; width:254px;", :type => "text", :name=>"name", :placeholder => "New wishlist name "}/
+    .wishlist-button.wishlist-create.fl
+      %a{:href => "Javascript:;"}
+        %img{:alt => "create-wishlist", :border => "0", :height => "28", :src => "/assets/create-wishlist-small.png", :width => "88"}/

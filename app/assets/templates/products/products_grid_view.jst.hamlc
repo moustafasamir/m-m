@@ -1,0 +1,3 @@
+- for [1..@columns]
+  .l-prod-v-row
+.pagination
